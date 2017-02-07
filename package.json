@@ -1,0 +1,31 @@
+{
+  "name": "react-pure-ui",
+  "version": "0.1.0",
+  "description": "Development component for connecting stateless components to an array of states",
+  "license": "MIT",
+  "repository": "timhudson/react-pure-ui",
+  "main": "./lib/index.js",
+  "author": "Tim Hudson <tim.hudson15@gmail.com> (http://github.com/timhudson)",
+  "bugs": {
+    "url": "https://github.com/timhudson/react-pure-ui/issues"
+  },
+  "homepage": "https://github.com/timhudson/react-pure-ui",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "watch": "babel src --out-dir lib --watch",
+    "test": "standard"
+  },
+  "keywords": [
+    "react",
+    "reactjs"
+  ],
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-preset-env": "^1.1.8",
+    "standard": "^8.6.0"
+  }
+}
