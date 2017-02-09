@@ -1,6 +1,6 @@
 {
   "name": "react-pure-ui",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Development component for connecting stateless components to an array of states",
   "license": "MIT",
   "repository": "timhudson/react-pure-ui",
