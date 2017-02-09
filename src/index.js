@@ -12,13 +12,14 @@ export default (key, states) => Comp => {
       this.handleKeydown = this.handleKeydown.bind(this)
 
       this.state = {
-        activeState: Number(window.localStorage.getItem(persistencekey)) || 0
+        activeState: Number(window.localStorage.getItem(persistencekey)) || 0,
+        skip: false
       }
     }
 
     render () {
-      const { activeState } = this.state
-      const props = states[activeState]
+      const { activeState, skip } = this.state
+      const props = skip ? this.props : states[activeState]
       return React.createElement(Comp, props)
     }
 
@@ -31,12 +32,14 @@ export default (key, states) => Comp => {
     }
 
     handleKeydown (e) {
-      const { activeState } = this.state
+      const { activeState, skip } = this.state
 
       if (e.code === 'ArrowLeft' && states[activeState - 1]) {
         this.changeActiveState(activeState - 1)
       } else if (e.code === 'ArrowRight' && states[activeState + 1]) {
         this.changeActiveState(activeState + 1)
+      } else if (e.code === 'Escape') {
+        this.setState({ skip: !skip })
       }
     }
 

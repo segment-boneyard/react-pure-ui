@@ -31,6 +31,12 @@ render(<PureComponent />, document.getElementById('root'))
 
 Connects a stateless component to an array of possible states, allowing keyboard navigation through states with ← and →.
 
+### Key commands
+
+- `Left Arrow` – navigate to the previous state
+- `Right Arrow` – navigate to the next state
+- `Escape` – turn off pure-ui state, passing through props rather than using states.
+
 ## License
 
 MIT
