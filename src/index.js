@@ -19,7 +19,7 @@ export default (key, states) => Comp => {
 
     render () {
       const { activeState, skip } = this.state
-      const props = skip ? this.props : states[activeState]
+      const props = skip ? this.props : { ...this.props, ...states[activeState] }
       return React.createElement(Comp, props)
     }
 

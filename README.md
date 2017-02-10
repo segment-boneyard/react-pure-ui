@@ -29,7 +29,7 @@ render(<PureComponent />, document.getElementById('root'))
 
 ### pure(key, states)(Component)
 
-Connects a stateless component to an array of possible states, allowing keyboard navigation through states with ← and →.
+Connects a stateless component to an array of possible states, allowing keyboard navigation through states with ← and →. Any `props` passed in will be merged with the active state with the latter taking precedence.
 
 ### Key commands
 
