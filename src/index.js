@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import keycode from 'keycode'
 
 const PERSISTENCE_PREFIX = 'react-pure-ui'
 
@@ -33,12 +34,13 @@ export default (key, states) => Comp => {
 
     handleKeydown (e) {
       const { activeState, skip } = this.state
+      const key = keycode(e)
 
-      if (e.code === 'ArrowLeft' && states[activeState - 1]) {
+      if (key === 'left' && states[activeState - 1]) {
         this.changeActiveState(activeState - 1)
-      } else if (e.code === 'ArrowRight' && states[activeState + 1]) {
+      } else if (key === 'right' && states[activeState + 1]) {
         this.changeActiveState(activeState + 1)
-      } else if (e.code === 'Escape') {
+      } else if (key === 'esc') {
         this.setState({ skip: !skip })
       }
     }
